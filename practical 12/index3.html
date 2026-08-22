@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        header{
+             position:sticky;
+             top:0;
+        }
+        nav{
+            background-color: rgb(139, 21, 56);
+            height:83px;
+        }
+        main{
+            background-color: rgb(62, 128, 173);
+            color: aqua;
+            padding: 34px;
+        }
+        .container{
+           background-color: rgb(255, 127, 212);
+           margin: 12px 34px;
+           padding:55px 23px;
+           text-align:center ;
+        }
+        .box1{
+            background-color: lightpink;
+            height:70vh;
+            width: 45%;
+            margin: 0px 12px;
+            display: inline-block;
+        }
+        .box2{
+            background-color: skyblue;
+            height:70vh;
+            width: 45%;
+            margin: 0px 12px;
+            display: inline-block
+        }
+        .text-box{
+            padding: 34px;
+            border:2px solid blueviolet;
+            margin:50px 34px;
+            font-size: 2em;
+            border-radius:13px;
+        }
+        .orange-box{
+            background:orange;
+            height:32px;
+            width:32px;
+            position:fixed;
+            bottom:12px;
+            right:23px;
+            border-radius: 60px;
+        }
+        footer{
+            height: 100px;
+            background-color: rgb(122, 32, 59);
+        }
+        nav ul{
+            color:aliceblue;
+            display:flex;
+            list-style:none;
+            margin:13px;
+            padding:23px;
+            gap:23px;
+        }
+        .h1{
+            text-align:center;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>THIS IS MY WEBSITE</h1>
+      <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="text-box">
+            <p>
+                hey hi
+            </p>
+        </div>
+      </div>
+      <div class="orange-box">
+
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

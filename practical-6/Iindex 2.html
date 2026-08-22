@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: rgb(163, 66, 66);
+        }
+        #blue{
+            background-color: rgb(77, 105, 101);
+        }
+        .blue{
+            color:rgb(60, 105, 90);
+        }
+        /*descendant selector*/
+        div >h3 {
+            color: rgb(168, 160, 160);
+        }
+        /*child selector*/
+        div >p{
+            color: rgb(109, 62, 23);
+        }
+       /*universal selector*/
+        *{
+            margin:0;
+            padding:0;
+        }
+        a:visited{
+            color: brown;
+        }
+        a:link{
+            color: green;
+        }
+        a:active{
+            color: yellow;
+        }
+       p:hover{
+            background-color:#2d490d;
+        }
+        .xyz h1 {
+            color: aqua;
+        }
+        div.zyx p{
+             color: blue ;
+        }
+    </style>
+</head>
+<body>
+    <h1>selector</h1>
+    <div>
+        <p>This is paragraph</p>
+    </div>
+    <div id="blue">
+        <h3>this is heading</h3>
+       <p>This is another paragraph</p>
+    </div>
+    <div class="blue">
+        <artical><h3>This  is a heading</h3></artical>
+        <p>this is third paragraph</p>
+    </div>
+    <a href="https//www.google.com">open google</a>
+    <br>
+    <a href="https//www.youtube.com">open youtube</a>
+    <div class ="abc">
+        <div class="abcd xyz">
+            <h1>this is a heading </h1>
+            <p> this is a paragraph</p>
+        </div>
+        <div class="abcde zyx">
+            <h2>this is another heading</h2>
+            <p>this is another paragraph</p>
+        </div>
+    </div>
+</body>
+</html>

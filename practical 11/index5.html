@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more on css selector</title>
+    <style>
+        .box:first-child{
+            background-color:blue;
+        }
+        .box::first-line{
+            color:rgb(0, 255, 21);
+        }
+        .boxes * {
+            color:pink;
+            border:2px solid rgb(165, 42, 144);
+        }
+        .boxes::before{
+            content:"hey i am before";
+            color:rgb(68, 9, 32);
+        }
+        .boxes::after{
+            content:"hey i am after";
+            color:rgb(11, 153, 58);
+        }
+        .box::first-letter{
+            color:rgb(0, 255, 157);
+            font-size:4em;
+        }
+        input::placeholder{
+            color:rgb(255, 0, 0);
+        }
+        ::selection{
+            background-color:aqua;
+            color:rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box"> I am first box</div>
+        <div class="box"> I am second box</div>
+        <div class="box"> I am third box</div>
+        <input type="text" placeholder="Enter your name" class="input">
+    </div>
+</body>
+</html>

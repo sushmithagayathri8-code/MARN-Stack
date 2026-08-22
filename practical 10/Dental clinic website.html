@@ -1,0 +1,1884 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmileCare Dental Clinic</title>
+  <meta
+    name="description"
+    content="Premium dental clinic website with modern design, trusted care, and elegant services."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary: #0f6cbd;
+      --secondary: #18b7b0;
+      --accent: #ffd166;
+      --bg: #f7fbff;
+      --white: #ffffff;
+      --dark: #1f2937;
+      --gray: #6b7280;
+      --light-gray: #e5e7eb;
+      --shadow: 0 16px 40px rgba(15, 108, 189, 0.12);
+      --shadow-soft: 0 10px 25px rgba(31, 41, 55, 0.08);
+      --radius-lg: 1.8rem;
+      --radius-md: 1.2rem;
+      --radius-sm: 0.8rem;
+      --max-width: 1200px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.95rem 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(15, 108, 189, 0.18);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--primary);
+      border: 1px solid rgba(15, 108, 189, 0.18);
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 108, 189, 0.06);
+      transform: translateY(-3px);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      z-index: 9999;
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.03em;
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--dark);
+      transition: var(--transition);
+      padding: 0.4rem 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: width 0.3s ease;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      padding: 0.75rem 1.1rem;
+      box-shadow: none;
+      margin-left: 0.3rem;
+    }
+
+    .hero {
+      position: relative;
+      padding: 4rem 0 5rem;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(24, 183, 176, 0.16), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 209, 102, 0.24), transparent 28%);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+
+    .hero::before {
+      width: 250px;
+      height: 250px;
+      background: rgba(15, 108, 189, 0.1);
+      top: -40px;
+      right: -60px;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      background: rgba(24, 183, 176, 0.12);
+      bottom: 70px;
+      left: -40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.3rem, 4.4vw, 4rem);
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .hero-content p {
+      font-size: 1.02rem;
+      color: var(--gray);
+      margin-bottom: 1.8rem;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .hero-badges span {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      color: var(--dark);
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      font-weight: 500;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-visual {
+      position: relative;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 2.2rem;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 20px 50px rgba(31, 41, 55, 0.14);
+    }
+
+    .hero-visual img {
+      border-radius: 1.8rem;
+      min-height: 480px;
+    }
+
+    .hero-card {
+      position: absolute;
+      left: -1.2rem;
+      bottom: 1.3rem;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 1.2rem;
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+      max-width: 220px;
+    }
+
+    .hero-card strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .wave-divider {
+      margin-top: 4rem;
+      height: 60px;
+      background: linear-gradient(180deg, transparent, var(--bg));
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 108, 189, 0.06), rgba(24, 183, 176, 0.04));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 1rem;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(15, 108, 189, 0.12), rgba(24, 183, 176, 0.12));
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .about-image img {
+      border-radius: 2rem;
+      min-height: 400px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-content {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(229, 231, 235, 0.7);
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+    }
+
+    .about-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .about-stat {
+      padding: 1rem;
+      background: linear-gradient(135deg, rgba(15, 108, 189, 0.06), rgba(24, 183, 176, 0.05));
+      border-radius: 1rem;
+      border: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .about-stat strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card img {
+      height: 210px;
+    }
+
+    .service-body {
+      padding: 1.2rem 1.2rem 1.4rem;
+    }
+
+    .service-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-body p {
+      color: var(--gray);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-link {
+      color: var(--primary);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: var(--transition);
+    }
+
+    .service-link:hover {
+      gap: 0.7rem;
+    }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+    }
+
+    .doctor-card {
+      background: var(--white);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      transition: var(--transition);
+      text-align: center;
+      padding-bottom: 1.2rem;
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .doctor-card img {
+      height: 250px;
+    }
+
+    .doctor-info {
+      padding: 1.1rem 1.1rem 0;
+    }
+
+    .doctor-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .doctor-role {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .doctor-meta {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .doctor-social {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .doctor-social a {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(15, 108, 189, 0.08);
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .doctor-social a:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+      position: relative;
+    }
+
+    .process-grid::before {
+      content: "";
+      position: absolute;
+      top: 38px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(15, 108, 189, 0.25), rgba(24, 183, 176, 0.25));
+      z-index: 0;
+    }
+
+    .process-step {
+      background: var(--white);
+      border-radius: 1.5rem;
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 10px 25px rgba(15, 108, 189, 0.16);
+    }
+
+    .process-step h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .process-step p {
+      color: var(--gray);
+      font-size: 0.92rem;
+    }
+
+    .stats-section {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 4rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 1.2rem;
+      padding: 1.6rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-card span {
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 1.3rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      min-height: 220px;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.3rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 1.5rem;
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .quote {
+      font-size: 3rem;
+      color: rgba(15, 108, 189, 0.2);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .testimonial-card p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-person {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .testimonial-person img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+    }
+
+    .testimonial-person strong {
+      display: block;
+      font-size: 0.96rem;
+    }
+
+    .testimonial-person span {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    .rating {
+      color: var(--accent);
+      letter-spacing: 0.22em;
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    details {
+      background: var(--white);
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    details[open] {
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-plus {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    details p {
+      color: var(--gray);
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(229, 231, 235, 0.7);
+    }
+
+    .appointment-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .appointment-card,
+    .contact-card,
+    .map-card,
+    .newsletter-card {
+      background: var(--white);
+      border-radius: 1.8rem;
+      padding: 1.6rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .appointment-card h3,
+    .contact-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .appointment-card p,
+    .contact-card p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .contact-list div {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .contact-list strong {
+      color: var(--dark);
+    }
+
+    .appointment-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 0.95rem;
+      background: var(--bg);
+      color: var(--dark);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(15, 108, 189, 0.1);
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.4rem;
+    }
+
+    .map-card iframe {
+      border: 0;
+      border-radius: 1.2rem;
+      width: 100%;
+      height: 320px;
+    }
+
+    .newsletter-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.4rem;
+      background: linear-gradient(120deg, rgba(15, 108, 189, 0.95), rgba(24, 183, 176, 0.95));
+      color: var(--white);
+      box-shadow: 0 20px 48px rgba(15, 108, 189, 0.18);
+    }
+
+    .newsletter-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter-card p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 560px;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      min-width: min(100%, 420px);
+    }
+
+    .subscribe-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.95rem 1rem;
+      border: none;
+      border-radius: 999px;
+      outline: none;
+    }
+
+    .subscribe-form button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.95rem 1.3rem;
+      background: var(--white);
+      color: var(--primary);
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .subscribe-form button:hover {
+      transform: translateY(-2px);
+    }
+
+    .site-footer {
+      background: #0d2d42;
+      color: rgba(255, 255, 255, 0.9);
+      padding: 3.5rem 0 1.2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 1.5rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.72);
+      margin-top: 0.85rem;
+      max-width: 300px;
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+      margin-bottom: 0.8rem;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .footer-links ul,
+    .footer-contact ul {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .footer-links a,
+    .footer-contact li {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1rem;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.92rem;
+    }
+
+    .back-top {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: var(--transition);
+    }
+
+    .back-top:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1080px) {
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid,
+      .doctors-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid::before {
+        display: none;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-grid,
+      .appointment-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 0.7rem;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-card {
+        position: static;
+        margin-top: 1rem;
+        max-width: 100%;
+      }
+
+      .feature-grid,
+      .services-grid,
+      .doctors-grid,
+      .stats-grid,
+      .gallery-grid,
+      .faq-grid,
+      .form-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .subscribe-form {
+        min-width: 100%;
+      }
+
+      .subscribe-form input {
+        width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-bar">
+      <a class="logo" href="#home">Smile<span>Care</span></a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary nav-btn" href="#appointment">Book Appointment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Precision • Comfort • Care</p>
+          <h1>Your Smile Is Our Priority</h1>
+          <p>
+            Discover a premium dental experience with advanced technology,
+            gentle treatment, and a luxury-focused environment designed around
+            you.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#appointment">Book Consultation</a>
+            <a class="btn btn-outline" href="#services">Explore Services</a>
+          </div>
+
+          <div class="hero-badges">
+            <span>Same Day Appointments</span>
+            <span>Gentle Family Dentistry</span>
+            <span>Digital Imaging</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80"
+            alt="Smiling patient receiving dental treatment"
+          />
+          <div class="hero-card">
+            <strong>4.9/5 Patient Satisfaction</strong>
+            <span>Trusted by families across the city.</span>
+          </div>
+        </div>
+      </div>
+      <div class="wave-divider"></div>
+    </section>
+
+    <section class="section" id="why-us">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2>Exceptional care, delivered with elegance and confidence</h2>
+          <p>
+            From the first visit to follow-up care, every detail is crafted to
+            make your experience comforting, seamless, and exceptional.
+          </p>
+        </div>
+
+        <div class="card-grid feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🦷</div>
+            <h3>Experienced Dentists</h3>
+            <p>
+              A highly skilled team of specialists with years of clinical expertise.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>Modern Equipment</h3>
+            <p>
+              State-of-the-art tools and digital diagnostics for precise treatments.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">💙</div>
+            <h3>Affordable Care</h3>
+            <p>
+              Transparent pricing and flexible plans to support your smile journey.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Emergency Service</h3>
+            <p>
+              Prompt support for urgent dental needs when you need us most.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80"
+            alt="Modern dental clinic interior"
+          />
+        </div>
+
+        <div class="about-content">
+          <p class="eyebrow">About Our Clinic</p>
+          <h3>Where compassion meets clinical excellence</h3>
+          <p>
+            SmileCare Dental Clinic combines luxury hospitality with advanced
+            dentistry to create a comfortable and reassuring environment for
+            every patient.
+          </p>
+          <p>
+            Our mission is to restore confidence through healthy, radiant smiles,
+            while our vision is to redefine dental care with innovation, empathy,
+            and excellence.
+          </p>
+
+          <div class="about-stats">
+            <div class="about-stat">
+              <strong>Mission</strong>
+              <span>Deliver premium care with precision and comfort.</span>
+            </div>
+            <div class="about-stat">
+              <strong>Vision</strong>
+              <span>Set a new standard in modern dental wellness.</span>
+            </div>
+            <div class="about-stat">
+              <strong>Years</strong>
+              <span>25+ years of trusted experience</span>
+            </div>
+            <div class="about-stat">
+              <strong>Awards</strong>
+              <span>National recognition for clinical excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Our Services</p>
+          <h2>Comprehensive dental solutions for every stage of life</h2>
+          <p>
+            From preventative care to restorative and cosmetic treatments, our
+            services are designed to keep your smile healthy and beautiful.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=600&q=80"
+              alt="General dentistry care"
+            />
+            <div class="service-body">
+              <h3>General Dentistry</h3>
+              <p>Routine care, fillings, and preventive treatment for long-term health.</p>
+              <a class="service-link" href="#appointment">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80"
+              alt="Teeth cleaning service"
+            />
+            <div class="service-body">
+              <h3>Teeth Cleaning</h3>
+              <p>Professional cleaning to remove plaque, polish, and preserve enamel.</p>
+              <a class="service-link" href="#appointment">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80"
+              alt="Dental implant treatment"
+            />
+            <div class="service-body">
+              <h3>Dental Implants</h3>
+              <p>Advanced implant solutions that feel natural and restore confidence.</p>
+              <a class="service-link" href="#appointment">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80"
+              alt="Orthodontic braces treatment"
+            />
+            <div class="service-body">
+              <h3>Braces</h3>
+              <p>Correct alignment and improve bite function with modern orthodontics.</p>
+              <a class="service-link" href="#appointment">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80"
+              alt="Root canal procedure"
+            />
+            <div class="service-body">
+              <h3>Root Canal</h3>
+              <p>Gentle endodontic care to relieve pain and preserve your natural tooth.</p>
+              <a class="service-link" href="#appointment">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
+              alt="Cosmetic dentistry procedure"
+            />
+            <div class="service-body">
+              <h3>Cosmetic Dentistry</h3>
+              <p>Smile makeovers, veneers, and aesthetic enhancements with precision.</p>
+              <a class="service-link" href="#appointment">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1609840113929-3f8a5d49337c?auto=format&fit=crop&w=600&q=80"
+              alt="Teeth whitening treatment"
+            />
+            <div class="service-body">
+              <h3>Whitening</h3>
+              <p>Safe and effective whitening for a brighter, fresher smile.</p>
+              <a class="service-link" href="#appointment">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80"
+              alt="Pediatric dental care"
+            />
+            <div class="service-body">
+              <h3>Pediatric Dentistry</h3>
+              <p>Gentle, child-friendly dental care that builds confidence and habits.</p>
+              <a class="service-link" href="#appointment">Learn More →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="doctors">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Meet Our Dentists</p>
+          <h2>Experienced clinicians with a personal touch</h2>
+          <p>
+            Our doctors bring expertise, warmth, and a focus on delivering
+            beautiful results with comfort in mind.
+          </p>
+        </div>
+
+        <div class="doctors-grid">
+          <article class="doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
+              alt="Dr. Amelia Carter"
+            />
+            <div class="doctor-info">
+              <h3>Dr. Amelia Carter</h3>
+              <div class="doctor-role">DDS, Cosmetic Dentistry</div>
+              <div class="doctor-meta">Specialist in smile design and veneers</div>
+              <div class="doctor-meta">15 years experience</div>
+              <div class="doctor-social">
+                <a href="#" aria-label="Dr. Carter LinkedIn">in</a>
+                <a href="#" aria-label="Dr. Carter Instagram">ig</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80"
+              alt="Dr. Daniel Brooks"
+            />
+            <div class="doctor-info">
+              <h3>Dr. Daniel Brooks</h3>
+              <div class="doctor-role">MDent, Oral Surgery</div>
+              <div class="doctor-meta">Expert in implants and complex restorations</div>
+              <div class="doctor-meta">18 years experience</div>
+              <div class="doctor-social">
+                <a href="#" aria-label="Dr. Brooks LinkedIn">in</a>
+                <a href="#" aria-label="Dr. Brooks Instagram">ig</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80"
+              alt="Dr. Sofia Nguyen"
+            />
+            <div class="doctor-info">
+              <h3>Dr. Sofia Nguyen</h3>
+              <div class="doctor-role">BDS, Orthodontics</div>
+              <div class="doctor-meta">Focused on modern braces and aligners</div>
+              <div class="doctor-meta">12 years experience</div>
+              <div class="doctor-social">
+                <a href="#" aria-label="Dr. Nguyen LinkedIn">in</a>
+                <a href="#" aria-label="Dr. Nguyen Instagram">ig</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80"
+              alt="Dr. Marcus Lee"
+            />
+            <div class="doctor-info">
+              <h3>Dr. Marcus Lee</h3>
+              <div class="doctor-role">BDS, Pediatric Dentistry</div>
+              <div class="doctor-meta">Gentle care for children and families</div>
+              <div class="doctor-meta">10 years experience</div>
+              <div class="doctor-social">
+                <a href="#" aria-label="Dr. Lee LinkedIn">in</a>
+                <a href="#" aria-label="Dr. Lee Instagram">ig</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Our Process</p>
+          <h2>A calm, comfortable journey to your healthiest smile</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <div class="step-number">01</div>
+            <h3>Book Appointment</h3>
+            <p>Choose a convenient time that suits your schedule and needs.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">02</div>
+            <h3>Consultation</h3>
+            <p>Meet our specialists for a personalized assessment and plan.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">03</div>
+            <h3>Treatment</h3>
+            <p>Benefit from precise, evidence-based care in a relaxing setting.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">04</div>
+            <h3>Healthy Smile</h3>
+            <p>Enjoy your confident new smile with guided aftercare support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <strong>1500+</strong>
+          <span>Happy Patients</span>
+        </div>
+        <div class="stat-card">
+          <strong>25+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="stat-card">
+          <strong>15+</strong>
+          <span>Dental Experts</span>
+        </div>
+        <div class="stat-card">
+          <strong>98%</strong>
+          <span>Success Rate</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Before & After Gallery</p>
+          <h2>Real transformations, beautifully delivered</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80"
+              alt="Before and after smile transformation"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=700&q=80"
+              alt="Dental treatment and smile restoration"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=700&q=80"
+              alt="Cosmetic dentistry result"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=700&q=80"
+              alt="Professional smile makeover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Testimonials</p>
+          <h2>Patients love the comfort and results we deliver</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <div class="rating">★★★★★</div>
+            <p>
+              The whole experience felt premium and reassuring. My treatment was
+              seamless and the results were outstanding.
+            </p>
+            <div class="testimonial-person">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+                alt="Patient testimonial"
+              />
+              <div>
+                <strong>Emily R.</strong>
+                <span>Cosmetic Dentistry</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <div class="rating">★★★★★</div>
+            <p>
+              I was nervous at first, but the team made me feel cared for from
+              the very start. I highly recommend them.
+            </p>
+            <div class="testimonial-person">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+                alt="Patient testimonial"
+              />
+              <div>
+                <strong>James P.</strong>
+                <span>Implant Treatment</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <div class="rating">★★★★★</div>
+            <p>
+              Beautiful clinic, friendly staff, and exceptional care. I
+              genuinely look forward to every visit.
+            </p>
+            <div class="testimonial-person">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
+                alt="Patient testimonial"
+              />
+              <div>
+                <strong>Sarah L.</strong>
+                <span>Family Dentistry</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Frequently Asked Questions</p>
+          <h2>Everything you need to know before your visit</h2>
+        </div>
+
+        <div class="faq-grid">
+          <details open>
+            <summary>
+              Do you accept new patients?
+              <span class="faq-plus">+</span>
+            </summary>
+            <p>Yes, we welcome new patients and offer a smooth first-visit experience.</p>
+          </details>
+
+          <details>
+            <summary>
+              What treatments are available?
+              <span class="faq-plus">+</span>
+            </summary>
+            <p>We offer general, cosmetic, restorative, implant, orthodontic, and pediatric care.</p>
+          </details>
+
+          <details>
+            <summary>
+              Do you offer emergency dental care?
+              <span class="faq-plus">+</span>
+            </summary>
+            <p>Yes, we provide urgent dental assistance for pain, injury, and emergencies.</p>
+          </details>
+
+          <details>
+            <summary>
+              Can I book online?
+              <span class="faq-plus">+</span>
+            </summary>
+            <p>Absolutely. You can book an appointment through our contact form or by phone.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="appointment">
+      <div class="container appointment-grid">
+        <article class="appointment-card">
+          <p class="eyebrow">Book Appointment</p>
+          <h3>Schedule your visit with our dental experts</h3>
+          <p>
+            We make booking simple and fast. Share your details and our team
+            will confirm your appointment promptly.
+          </p>
+
+          <div class="contact-list">
+            <div>
+              <strong>📍</strong>
+              <span>45 Park Avenue, New York</span>
+            </div>
+            <div>
+              <strong>📞</strong>
+              <span>+1 (800) 555-0142</span>
+            </div>
+            <div>
+              <strong>✉️</strong>
+              <span>care@smilecareclinic.com</span>
+            </div>
+          </div>
+        </article>
+
+        <form class="appointment-form appointment-card" aria-label="Appointment form">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" type="text" placeholder="Your full name" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="your@email.com" />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" placeholder="+1 234 567 890" />
+            </div>
+
+            <div class="field">
+              <label for="date">Preferred Date</label>
+              <input id="date" type="date" />
+            </div>
+
+            <div class="field">
+              <label for="department">Department</label>
+              <select id="department">
+                <option>General Dentistry</option>
+                <option>Cosmetic Dentistry</option>
+                <option>Orthodontics</option>
+                <option>Implants</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="doctor">Doctor</label>
+              <select id="doctor">
+                <option>Dr. Amelia Carter</option>
+                <option>Dr. Daniel Brooks</option>
+                <option>Dr. Sofia Nguyen</option>
+                <option>Dr. Marcus Lee</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Tell us about your concerns or preferences"></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Submit Request</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <article class="contact-card">
+          <p class="eyebrow">Contact Us</p>
+          <h3>Visit our premium dental clinic</h3>
+          <p>
+            We are here to welcome you with thoughtful care, professional treatment,
+            and a tranquil environment.
+          </p>
+
+          <div class="contact-list">
+            <div>
+              <strong>📍</strong>
+              <span>45 Park Avenue, New York, NY 10016</span>
+            </div>
+            <div>
+              <strong>📞</strong>
+              <span>+1 (800) 555-0142</span>
+            </div>
+            <div>
+              <strong>✉️</strong>
+              <span>care@smilecareclinic.com</span>
+            </div>
+            <div>
+              <strong>🕒</strong>
+              <span>Mon–Sat: 8:00 AM – 8:00 PM</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="map-card">
+          <iframe
+            title="Clinic location map"
+            src="https://www.google.com/maps?q=New%20York%20Park%20Avenue&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container newsletter-card">
+        <div>
+          <p class="eyebrow">Stay Updated</p>
+          <h3>Join our newsletter for dental tips and offers</h3>
+          <p>
+            Receive promotions, care advice, and updates from our expert dental team.
+          </p>
+        </div>
+
+        <form class="subscribe-form" aria-label="Newsletter subscription">
+          <input type="email" placeholder="Enter your email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home" style="color: white;">Smile<span>Care</span></a>
+        <p>
+          Elevating dental care through innovation, comfort, and excellence.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">General Dentistry</a></li>
+          <li><a href="#services">Cosmetic Dentistry</a></li>
+          <li><a href="#services">Orthodontics</a></li>
+          <li><a href="#services">Implants</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <ul>
+          <li>45 Park Avenue, New York</li>
+          <li>+1 (800) 555-0142</li>
+          <li>care@smilecareclinic.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 SmileCare Dental Clinic. All rights reserved.</p>
+      <a class="back-top" href="#top" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+</body>
+</html>
+```
